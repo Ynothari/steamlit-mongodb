@@ -52,6 +52,7 @@ def open_account():
                     "balance": initial_balance
                 })
                 st.success(f"Account for {name} opened successfully with balance {initial_balance}!")
+                st.balloons()
             else:
                 st.error("Please upload a picture.")
 
