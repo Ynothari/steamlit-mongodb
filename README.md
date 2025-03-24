@@ -1,5 +1,5 @@
 # atm
-ATM machine
+Online Banking Service
 
 OVERVIEW:
 The Banking Services program is developed using Streamlit for the front-end interface and MongoDB for the database. The program allows users to perform various banking activities, including opening accounts, viewing account details, depositing money, withdrawing money, and checking balances. This document outlines the tools used and topics covered in the program.
