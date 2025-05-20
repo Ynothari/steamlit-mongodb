@@ -1,46 +1,118 @@
-# atm
-Online Banking Service
+# 🏦 Online Banking Service
 
-OVERVIEW:
-The Banking Services program is developed using Streamlit for the front-end interface and MongoDB for the database. The program allows users to perform various banking activities, including opening accounts, viewing account details, depositing money, withdrawing money, and checking balances. This document outlines the tools used and topics covered in the program.
-TOOLS USED:
-1.	Streamlit: A Python library used for creating interactive web applications. In this program, Streamlit is used to create the user interface, enabling users to interact with the system through forms and buttons.
-2.	MongoDB: A NoSQL database used to store user information and transaction records. The pymongo library is utilized to interact with the MongoDB database.
-3.	PIL (Python Imaging Library): A library for opening, manipulating, and saving image files. It is used to handle user-uploaded images for account creation.
-4.	Base64: A method for encoding binary data (like images) into ASCII text. This is used to store images in the MongoDB database.
-5.	IO (Input/Output): A core Python module used for managing streams, in this case, to handle image data.
-TOPICS COVERED:
-Opening an Account:
-1.	Users can open a new account by providing account details such as account number, account type, user ID, name, email, and an initial balance.
-2.	Users are required to upload a picture, which is encoded to base64 and stored in MongoDB.
-3.	The program ensures all necessary information is provided and stores the user details in the users collection.
-Viewing Account Details:
-1.	Users can view their account details by entering their user ID.
-2.	The program fetches and displays details such as account number, account type, user ID, name, email, and current balance from the MongoDB users collection.
-Depositing Money:
-1.	Users can deposit money into their account by entering their user ID and the amount to be deposited.
-2.	The program updates the user's balance in the MongoDB database and records the transaction in the transactions collection.
-Withdrawing Money:
-1.	Users can withdraw money from their account by providing their user ID and the amount to be withdrawn.
-2.	The program checks if the user has sufficient balance before updating the balance and recording the transaction.
+An interactive online banking application built using **Streamlit** and **MongoDB**. This project simulates a basic banking system that allows users to open accounts, view account details, deposit and withdraw money, and check account balances through a clean, user-friendly web interface.
 
-Checking Balance:
-1.	Users can check their account balance by entering their user ID.
-2.	The program retrieves and displays the current balance from the MongoDB users collection.
-DETAILED PROGRAM FLOW
-MongoDB Connection:
-1.	The program establishes a connection to a MongoDB instance running locally on port 27017.
-2.	It connects to the atm database and accesses two collections: users and transactions.
-Image Handling:
-1.	The encode_image function converts an uploaded image to base64 encoding, allowing it to be stored as a string in the database.
-Streamlit Interface:
-1.	The main title of the app is set to "ATM SYSTEM".
-2.	A sidebar is created for navigation, allowing users to choose from options like "Open Account," "View Account Details," "Deposit Money," "Withdraw Money," and "Check Balance."
-Form Handling:
-1.	The open_account function creates a form for account registration. It collects user inputs, encodes the image, and stores all information in the MongoDB users collection.
-2.	The view_account_details function retrieves and displays user details from the MongoDB users collection.
-3.	The deposit_money and withdraw_money functions handle financial transactions, updating the user's balance and recording each transaction in the transactions collection.
-4.	The check_balance function retrieves and displays the current balance of a user's account.
-Error Handling:
-1.	The program includes checks to ensure that the required information is provided and that sufficient funds are available for withdrawals.
-2.	It provides success and error messages to guide users through the process
+---
+
+## 📌 Overview
+
+This web-based banking service offers a seamless experience for performing essential banking operations. It features:
+
+- User account management
+- Real-time balance updates
+- Transaction tracking
+- Image uploads for user profiles
+- Secure and efficient database operations
+
+---
+
+## 🚀 Features
+
+### 📝 Open an Account
+- Fill out a form with details: account number, type, user ID, name, email, and initial balance.
+- Upload a profile image, encoded in base64 and stored securely in MongoDB.
+- Data validation ensures all required fields are completed.
+
+### 🔍 View Account Details
+- Retrieve complete account information using a user ID.
+- Displays account number, type, user ID, name, email, and current balance.
+
+### 💰 Deposit Money
+- Enter user ID and amount to deposit.
+- Updates account balance in real-time and logs the transaction in the database.
+
+### 💸 Withdraw Money
+- Input user ID and desired withdrawal amount.
+- Ensures sufficient balance before processing and logs the transaction.
+
+### 📊 Check Balance
+- Instantly fetch current balance using the user ID.
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Tool        | Description |
+|-------------|-------------|
+| **Streamlit** | Used to create the web UI with forms, buttons, and navigation sidebar. |
+| **MongoDB**   | NoSQL database for storing user and transaction data. |
+| **Pymongo**   | Python driver for MongoDB integration. |
+| **PIL (Pillow)** | For handling user-uploaded images. |
+| **Base64**    | Encodes images into ASCII text for storage. |
+| **IO**        | Manages image byte streams for encoding and decoding. |
+
+---
+
+## 🔄 Program Flow
+
+### 🔌 MongoDB Connection
+- Connects to a local MongoDB instance on `localhost:27017`.
+- Uses `atm` database with two collections: `users` and `transactions`.
+
+### 🖼️ Image Encoding
+- Converts uploaded images to base64 format using a custom `encode_image()` function.
+- Encoded images are stored as strings in MongoDB.
+
+### 🧩 Streamlit Interface
+- App titled **ATM SYSTEM**.
+- Sidebar menu for navigation:
+  - Open Account
+  - View Account Details
+  - Deposit Money
+  - Withdraw Money
+  - Check Balance
+
+### 🧾 Form & Transaction Handling
+- **open_account**: Collects user inputs, encodes image, stores in MongoDB.
+- **view_account_details**: Fetches and displays account info.
+- **deposit_money** / **withdraw_money**: Updates balance, logs transactions.
+- **check_balance**: Displays current balance.
+
+### ⚠️ Error Handling
+- Ensures required fields are completed.
+- Validates sufficient funds before withdrawal.
+- Displays appropriate success and error messages to guide users.
+
+---
+
+## 📷 Screenshots (Optional)
+_Add screenshots or GIFs here to showcase the application interface._
+
+---
+
+## 🧪 Installation & Run
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/online-banking-service.git
+cd online-banking-service
+
+# Install dependencies
+pip install streamlit pymongo pillow
+
+# Run the app
+streamlit run app.py
+```
+
+---
+
+## 📬 Feedback & Contributions
+
+Pull requests and issues are welcome. Feel free to fork this project and improve it!
+
+---
+
+## 🪪 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
